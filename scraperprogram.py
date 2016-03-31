@@ -5,27 +5,13 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
 import random
+from utils import check_country
+from utils import create_input_list
 
-# Initialise dict to store rates in
-rates_d = {}
-
-# Function to create list of countries to search for.
-# Only takes letters as 
-def create_input_list(prompt):
-    while True:
-        string = input(prompt).split(", ")
-        for x in string:
-            if not x.isalpha():
-                print("Please enter only enter letters")
-                break
-            continue
-        else:
-            break
-    return string
 
 def start_browser():
-    ##chromedriver_path ='C:\\Users\knowhow\Desktop\Python Learning\chromedriver'
-    chromedriver_path ='C:\Documents and Settings\Joel\My Documents\Downloads\chromedriver'
+    chromedriver_path ='C:\\Users\knowhow\Desktop\Python Learning\chromedriver'
+    ##chromedriver_path ='C:\Documents and Settings\Joel\My Documents\Downloads\chromedriver'
     browser = webdriver.Chrome(executable_path = chromedriver_path)
     return browser
 
@@ -35,6 +21,9 @@ def open_page(url):
     
 # Main function that finds and prints data
 def main_loop(in_list):
+    # Initialise dict to store rates in
+    rates_d = {}
+    
     for x in range(len(in_list)):
         
         # Find country entry box & clear it
@@ -68,6 +57,7 @@ if __name__ == "__main__":
 
     in_list = create_input_list("Enter string of countries separated \
 by a comma then space: ")
+    in_list = check_country(in_list)
     browser = start_browser()
     open_page('http://international.o2.co.uk/internationaltariffs/\
 calling_abroad_from_uk')
