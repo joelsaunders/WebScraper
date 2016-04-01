@@ -108,9 +108,7 @@ def main_loop(in_list):
     return (rates_d)
 
 
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod()
+if __name__ == "__main__":   
     in_list = create_input_list("Enter string of countries "
                                 "separated by a comma then space: ")
     in_list = check_country(in_list)
