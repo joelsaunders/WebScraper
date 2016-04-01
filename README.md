@@ -10,10 +10,13 @@ Due to very limited time there are a few rules for use:
 
 1. Initially it can only be used with Chrome
 
-2. Secondly to use it you will have to make sure that the directory of your chromedriver is correct
+2. Secondly to use it you will have to make sure that the directory of your chromedriver is correct in the scraperprogram.py file
 
-3. Thirdly at the moment it takes input in the form of strings made up of letters, 
-if the country name is incorrect or not on the website then there will be an Error and the program will crash.
+3. Thirdly at the moment it takes input in the form of strings made up of letters in a list form with entires separated by a comma and space e.g. South Africa, Croatia, Japan
 
-I intend to improve this but have limited spare time at the moment due to large workload.
+4. It outputs a dictionary with country name and rate for landline calls
+
+I really didn't manage to get much time to do this due to a very large workload, I intend to improve upon it.
+
+I found the task very enjoyable.
 
